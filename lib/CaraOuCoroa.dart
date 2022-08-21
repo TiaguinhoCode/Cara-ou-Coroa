@@ -13,7 +13,7 @@ class _CaraOuCoroaState extends State<CaraOuCoroa> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(255, 68, 196, 134),
+      color: Color(0xff61bd86),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

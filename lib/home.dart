@@ -11,28 +11,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   var imagemApp = AssetImage("images/moeda_cara.png");
-  void _escolha() {
-    var opcoes = ["cara", "coroa"];
-    var numero = Random().nextInt(2);
-    var escolhaApp = opcoes[numero];
-
-    switch (escolhaApp) {
-      case "cara":
-        setState(() {
-          this.imagemApp = AssetImage("images/moeda_cara.png");
-        });
-        break;
-      case "coroa":
-        setState(() {
-          this.imagemApp = AssetImage("images/moeda_coroa.png");
-        });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(255, 68, 196, 134),
+      color: Color(0xff61bd86),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
