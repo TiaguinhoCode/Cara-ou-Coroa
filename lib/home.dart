@@ -11,11 +11,38 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   void _exibirResultado() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => CaraOuCoroa()));
-  }
+    var opcoes = ["cara", "coroa"];
+    var numero = Random().nextInt(opcoes.length);
+    var resultado = opcoes[numero];
 
-  var imagemApp = AssetImage("images/moeda_cara.png");
+    /*if ((resultado == "cara")) {
+      setState(() {
+        this._imageApp = AssetImage("images/moeda_cara.png");
+      });
+    } else {
+      setState(() {
+        this._imageApp = AssetImage("images/moeda_coroa.png");
+      });
+    }*/
+    /*switch (escolhaApp) {
+      case "cara":
+        setState(() {
+          this._imageApp = AssetImage("images/moeda_cara.png");
+        });
+        break;
+      case "coroa":
+        setState(() {
+          this._imageApp = AssetImage("images/moeda_coroa.png");
+        });
+    }*/
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => CaraOuCoroa(
+                  valor: resultado,
+                )));
+  }
 
   @override
   Widget build(BuildContext context) {
