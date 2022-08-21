@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cara_coroa/home.dart';
 
 class CaraOuCoroa extends StatefulWidget {
   const CaraOuCoroa({Key? key, this.imagem}) : super(key: key);
@@ -22,8 +21,7 @@ class _CaraOuCoroaState extends State<CaraOuCoroa> {
           Padding(padding: EdgeInsets.only(top: 80)),
           GestureDetector(
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+              Navigator.pop(context);
             },
             child: Image.asset("images/botao_voltar.png"),
           )
