@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CaraOuCoroa extends StatefulWidget {
-  const CaraOuCoroa({Key? key, this.imagem}) : super(key: key);
+  const CaraOuCoroa({Key? key, this.valor = ""}) : super(key: key);
 
-  final imagem;
+  final String valor;
+
   @override
   State<CaraOuCoroa> createState() => _CaraOuCoroaState();
 }
@@ -17,7 +18,7 @@ class _CaraOuCoroaState extends State<CaraOuCoroa> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image(image: this.widget.imagem),
+          Image.asset("images/moeda_cara.png"),
           Padding(padding: EdgeInsets.only(top: 80)),
           GestureDetector(
             onTap: () {

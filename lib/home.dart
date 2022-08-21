@@ -10,6 +10,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  void _exibirResultado() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => CaraOuCoroa()));
+  }
+
   var imagemApp = AssetImage("images/moeda_cara.png");
 
   @override
@@ -23,13 +28,7 @@ class _HomeState extends State<Home> {
           Image.asset("images/logo.png"),
           Padding(padding: EdgeInsets.only(top: 40)),
           GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          CaraOuCoroa(imagem: this.imagemApp)));
-            },
+            onTap: _exibirResultado,
             child: Image.asset("images/botao_jogar.png"),
           )
         ],
