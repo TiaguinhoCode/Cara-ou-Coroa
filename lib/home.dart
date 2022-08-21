@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cara_coroa/CaraOuCoroa.dart';
+import 'dart:math';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -9,6 +10,25 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  var imagemApp = AssetImage("images/moeda_cara.png");
+  void _escolha() {
+    var opcoes = ["cara", "coroa"];
+    var numero = Random().nextInt(2);
+    var escolhaApp = opcoes[numero];
+
+    switch (escolhaApp) {
+      case "cara":
+        setState(() {
+          this.imagemApp = AssetImage("images/moeda_cara.png");
+        });
+        break;
+      case "coroa":
+        setState(() {
+          this.imagemApp = AssetImage("images/moeda_coroa.png");
+        });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,8 +41,11 @@ class _HomeState extends State<Home> {
           Padding(padding: EdgeInsets.only(top: 40)),
           GestureDetector(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CaraOuCoroa()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          CaraOuCoroa(imagem: this.imagemApp)));
             },
             child: Image.asset("images/botao_jogar.png"),
           )
